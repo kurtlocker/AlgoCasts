@@ -23,12 +23,12 @@
 function reverseInt(n) {
   const sign = Math.sign(n);
   return Number(
-    (sign === -1 ? '-' : '')
-      + Math.abs(n)
+    (sign === -1 ? '-' : '') +
+      Math.abs(n)
         .toString()
         .split('')
         .reverse()
-        .join(''),
+        .join('')
   );
 }
 

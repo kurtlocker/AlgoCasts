@@ -14,6 +14,25 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  const columnN = 2 * n - 1;
+  for (let i = 1; i <= n; i++) {
+    const hashN = 2 * i - 1;
+    const spaceN = (columnN - hashN) / 2;
+    console.log(' '.repeat(spaceN) + '#'.repeat(hashN) + ' '.repeat(spaceN));
+  }
+}
+
+// function pyramid(n) {
+//   let rightSteps = ' '.repeat(n);
+//   for (let i = 1; i <= n; i++) {
+//     rightSteps = `#${rightSteps}`;
+//     rightSteps = rightSteps.substring(0, rightSteps.length - 1);
+//     let leftSteps = rightSteps.split('').reverse();
+//     leftSteps.pop();
+//     leftSteps = leftSteps.join('');
+//     console.log(leftSteps + rightSteps);
+//   }
+// }
 
 module.exports = pyramid;
