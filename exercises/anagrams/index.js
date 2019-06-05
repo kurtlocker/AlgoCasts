@@ -25,9 +25,9 @@ function anagrams(stringA, stringB) {
   for (const char of stringB) {
     if (!charMap[char] || charMap[char] < 1) {
       return false;
-    } else { // Decrement the count of this char in the map by 1
-      charMap[char] -= 1;
     }
+    // Decrement the count of this char in the map by 1
+    charMap[char] -= 1;
   }
   return true;
 }
@@ -38,19 +38,20 @@ function anagrams(stringA, stringB) {
  * @param {*} str2
  */
 function anagram2(str1, str2) {
-  return 
+  return (
     str1
       .replace(/[^\w]/g, '')
       .toLowerCase()
       .split('')
       .sort()
       .join('') ===
-      str1
-        .replace(/[^\w]/g, '')
-        .toLowerCase()
-        .split('')
-        .sort()
-        .join('');
+    str2
+      .replace(/[^\w]/g, '')
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('')
+  );
 }
 
 module.exports = anagrams;
